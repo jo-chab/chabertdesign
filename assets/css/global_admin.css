@@ -1461,6 +1461,36 @@ ADMIN switch buttons
 .switch-checkbox:checked + .switch-knob {
   transform: translateX(30px); }
 
+/************************************
+ADMIN custom checkbox
+************************************/
+.list-checklist {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem 2rem;
+  margin-block: 1.5rem; }
+
+.custom-checkbox {
+  display: block;
+  padding: 1rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #D0D3D4;
+  color: #D0D3D4;
+  cursor: pointer;
+  transition: all .3s ease; }
+  .custom-checkbox:hover {
+    border-color: #52585f;
+    color: #52585f; }
+  .custom-checkbox:has(input[type="checkbox"]:checked) {
+    border-color: #efe5fd;
+    background-color: #efe5fd;
+    color: #3700b3; }
+  .custom-checkbox input[type="checkbox"] {
+    display: none; }
+
 /*
 *
 * LOCATION: [assets]
