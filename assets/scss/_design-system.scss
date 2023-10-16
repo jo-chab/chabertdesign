@@ -1,0 +1,745 @@
+/*
+*
+* LOCATION: [core]
+* FOLDER: [scss]
+* FILE NAME: [design-system.scss]
+* DESCRIPTION: Elements from the design system of Panellinios St-Michel FC
+*
+*/
+
+
+/*************** DESIGN SYSTEM ***************/
+
+
+
+/*******************************************************
+ALERT BOXES
+*******************************************************/
+.w-alert-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-alert-popup;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+    background-color: rgba($bg-body, 0.7);
+    box-sizing: border-box;
+    
+    .alert-message {
+        width: 100%;
+        max-width: 600px;
+        padding: 2rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        @include font-family-reading;
+        @include font-style(400, 1.25rem, 1.5em, $web-grey-6);
+        border: 1px solid #2e2e2e;
+        @include border-radius-uniform(1rem);
+        @include desktop {
+            padding: 4rem;
+        }
+        
+        i {
+            color: $color-warning;
+            padding: 0 0 16px;
+            font-size: 2em;
+        }
+        
+        &.alert-info {
+            background-color: $color-warning-lighter;
+            border-color: $color-warning-darker;
+            color: $color-warning-dark;
+            
+            i {
+                color: $color-warning-dark;
+            }
+        }
+        
+        &.alert-correct {
+            background-color: $color-success-lighter;
+            border-color: $color-success-darker;
+            color: $color-success-dark;
+            
+            i {
+                color: $color-success-dark;
+            }
+        }
+        
+        &.alert-error {
+            background-color: $admin-update;
+            border-color: $color-error-darker;
+            color: $color-error;
+            
+            i {
+                color: $color-error;
+            }
+        }
+        
+        span {
+            margin-top: 16px;
+        }
+    }
+    
+    .close-alert-box {
+        grid-column: span 2;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+}
+
+
+
+
+
+/***********************
+DESIGN SYSTEM - Cards
+***********************/
+.project-card {
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    
+    &:hover {
+        cursor: pointer;
+        .card-bg {
+            filter: blur(1px);
+            filter: grayscale(1);
+            &:after {
+                opacity: 0.7;
+            }
+        }
+        .card-content-overlay {
+            opacity: 1;
+            -webkit-transition: opacity .7s ease-in-out;
+            -moz-transition: opacity .7s ease-in-out;
+            -o-transition: opacity .7s ease-in-out;
+            transition: opacity .7s ease-in-out;
+            
+            > * {
+                opacity: 1;
+                -webkit-transition: opacity .2s ease-in-out .7s;
+                -moz-transition: opacity .2s ease-in-out .7s;
+                -o-transition: opacity .2s ease-in-out .7s;
+                transition: opacity .2s ease-in-out .7s;
+            }
+        }
+    }
+    
+    .card-content-overlay {
+        position: absolute;
+        top:0; right:0; bottom: 0; left: 0;
+        
+        opacity: 0;
+        width:100%;
+        height: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        .project-box-container & {
+            gap: 24px;
+        }
+        
+        background: $primary-color;
+        
+        -webkit-transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -o-transition: opacity .5s ease-in-out;
+        transition: opacity .5s ease-in-out;
+        
+        h6, h2 {
+            color: $web-grey-1;
+            text-align: center;
+            display:block;
+            line-height: 1.5em;
+            .project-box-container & {
+                line-height: 1;
+            }
+        }
+        
+        .secondary-button {
+            position: relative;
+            font-size: 14px;
+            text-transform: inherit;
+            margin-top: 40px;
+        }
+        > * {
+            opacity: 0;
+            will-change: opacity;
+            -webkit-transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+        }
+    }
+    
+}
+
+
+.hp-services-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    
+    .card-bg {
+        &:after {
+            opacity: 0;
+        }
+    }
+    h5 {
+        position: absolute;
+        top: 24px; left: 24px;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 300;
+        @include tablet {
+            font-size: 1.25rem;
+        }
+    }
+    &:hover {
+        .card-bg {
+            &:after {
+                opacity: 0.2;
+            }
+        }
+    }
+    
+}
+
+
+.project-card,
+.hp-services-card {
+    .card-bg {
+        width: 100%;
+        height: 100%;
+        //position: absolute; top:0; left:0; z-index: 0;
+        background-position: center center;
+        background-repeat:  no-repeat;
+        background-size: cover;
+        will-change: transform;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: opacity 0.66s linear, -webkit-transform 1s;
+        -moz-transition: -moz-transform 1s, opacity 0.66s linear;
+        -o-transition: transform 1s, opacity 0.66s linear;
+        transition: transform 1s, opacity 0.66s linear, -webkit-transform 1s;
+    }
+    
+    &:hover {
+        .card-bg {
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            transform: scale(1.05);
+            -webkit-transition-delay: 0s !important;
+            -moz-transition-delay: 0s !important;
+            -o-transition-delay: 0s !important;
+            transition-delay: 0s !important;
+            -webkit-transition-duration: 0.65s;
+            -moz-transition-duration: 0.65s;
+            -o-transition-duration: 0.65s;
+            transition-duration: 0.65s;
+        }
+    }
+}
+
+
+
+
+
+
+/***********************
+DESIGN SYSTEM – Buttons
+***********************/
+// For extend only
+.button {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    
+    text-align: center;
+    border-radius: 3rem;
+    transition: all .3s ease;
+    
+    &:hover {
+        cursor: pointer;
+    }
+    
+    @include mobile-max {
+        width: 100%;
+    }
+    
+    .dashboard & {
+        border-radius: .5rem;
+    }
+    
+    &.is-not-active {
+        opacity: .2;
+    }
+    
+    &.in-content {
+        margin: 2rem auto 3rem;
+    }
+}
+
+.btn-primary {
+    @extend .button;
+    
+    padding: 1rem 2rem;
+    @include font-family-reading;
+    @include font-style(700, 1rem, 1em, white);
+    background-color: $primary-color;
+    @include mobile-max {
+        padding: 1rem;
+    }
+    
+    @include tablet {
+        &:hover {
+            background-color: $primary-color-darker;
+        }
+    }
+    
+    &.small {
+        padding: .75rem 1.25rem;
+        font-size: .75rem;
+    }
+    
+    &.large {
+        font-size: 1.25rem;
+    }
+    
+    // ADMIN BTNs
+    .dashboard & {
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    &.btn-update {
+        background-color: $admin-primary;
+        @include tablet {
+            &:hover {
+                background-color: $admin-primary-darker;
+            }
+        }
+    }
+    
+    &.btn-delete,
+    &.btn-cancel,
+    &.btn-disable,
+    &.btn-activate,
+    &.btn-revert {
+        background-color: $admin-update;
+        color: $admin-update-2;
+        @include tablet {
+            &:hover {
+                color: $color-error;
+            }
+        }
+    }
+    
+    &.btn-confirm,
+    &.btn-validate,
+    &.btn-add {
+        background-color: $color-success;
+        color: $color-success-darker;
+        justify-self: center;
+        @include tablet {
+            &:hover {
+                background-color: $color-success-dark;
+            }
+        }
+    }
+    
+    &.btn-back {
+        background-color: $color-warning;
+        color: $web-grey-6;
+        
+        &:hover {
+            background-color: $color-warning-dark;
+        }
+        
+        &:before {
+            font: var(--fa-font-sharp-regular);
+            content: '\f344';
+            font-size: .875em;
+        }
+    }
+    
+    span.is-hide-mobile {
+        @include mobile-max {
+            display: none;
+        }
+    }
+}
+
+.btn-secondary {
+    @extend .button;
+    
+    padding: 1rem 2rem;
+    @include font-family-reading;
+    @include font-style(600, 1rem, 1em, $web-grey-6);
+    border: 1px solid $web-grey-6;
+    @include mobile-max {
+        padding: 1rem;
+    }
+    &:hover {
+        border-color: $web-grey-3;
+        color: $web-grey-3;
+    }
+    
+    &.small {
+        padding: .75rem 1.25rem;
+        font-size: .75rem;
+    }
+    
+    &.large {
+        font-size: 1.25rem;
+    }
+    
+    &.btn-brand {
+        border-color: $primary-color;
+        color: $primary-color;
+        
+        &:hover {
+            border-color: $primary-color-darker;
+            color: $primary-color-darker;
+        }
+    }
+    
+    &.ghost-white {
+        color: white;
+        border-color: white;
+        
+        &:hover {
+            background: white;
+            border-color: white;
+            color: $primary-color;
+        }
+    }
+    
+    // ADMIN BTNs
+    &.btn-delete,
+    &.btn-cancel,
+    &.btn-disable,
+    &.btn-activate,
+    &.btn-revert {
+        border-color: $secondary-color;
+        color: $secondary-color;
+        &:hover {
+            border-color: $color-error;
+            color: $color-error;
+        }
+    }
+    
+}
+
+.btn-tertiary {
+    @extend .button;
+    
+    @include font-family-heading;
+    @include font-style(400, 1rem, 1em, $secondary-color-darker);
+    padding: 0;
+    margin: 1.5rem 0;
+    
+    &:hover {
+        color: $accent-color;
+        &.scale {
+            transform: scale(1.1);
+        }
+    }
+    
+    .dashboard & {
+        margin: 0;
+    }
+    
+    &.small {
+        font-size: .75rem;
+    }
+    &.large {
+        font-size: 1.5rem;
+    }
+    &.xlarge {
+        font-size: 2rem;
+    }
+    
+    &.btn-text {
+        @include font-family-reading;
+        margin: 0;
+        color: $reading-text;
+        justify-content: flex-start;
+        
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    
+    &.btn-light {
+        color: white;
+    }
+    
+    &.btn-brand {
+        color: $primary-color;
+        
+        &:hover {
+            color: $primary-color-darker;
+        }
+    }
+    
+    // ADMIN BTNs
+    &.btn-delete,
+    &.btn-cancel,
+    &.btn-disable,
+    &.btn-activate,
+    &.btn-revert {
+        color: $color-error;
+        @include tablet {
+            color: $admin-update-2;
+            &:hover {
+                color: $color-error;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/*************************************
+SELECT & DROPDOWN
+*************************************/
+select {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    background-color: white;
+    padding: .75rem 1rem;
+    border: 1px solid #d3d3d3;
+    border-radius: .5rem 0 0 .5rem;
+    @include font-family-reading;
+    @include font-style(400, 1rem, 1.3em, $web-grey-6);
+}
+
+.select-dropdown {
+    position: relative;
+    width: 100%;
+    min-width: 220px;
+    max-width: 320px;
+    margin: 0 0 1rem;
+    @include line-clamp(1);
+    
+    display: flex;
+    
+    &.contact {
+        margin-left: 0;
+        width: 100%;
+        max-width: inherit;
+    }
+    
+    .dashboard & {
+        max-width: unset;
+        
+        label {
+            color: $admin-primary-darker;
+        }
+        
+        select {
+            padding: 2rem 4rem .5rem 1rem;
+            background-color: $admin-primary-lighter;
+            border-color: $admin-primary;
+        }
+    }
+    
+    label {
+        position: absolute;
+        top: .75rem;
+        left: 1rem;
+        z-index: 2;
+        color: $primary-color;
+        letter-spacing: 2px;
+    }
+    
+    select {
+        font-size: 1.125rem;
+        border-color: $primary-color;
+        color: $admin-update-2;
+        background-color: $admin-update;
+        padding: .75rem 4rem .75rem 1rem;
+        
+        background-image: url('/assets/icons/chevron-down-white.svg');
+        background-size: 24px 24px;
+        background-position: 95% center;
+        background-repeat: no-repeat;
+        
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+}
+
+
+
+
+/************************************
+FORMS ELEMENT - block, labels, input & cta
+************************************/
+.w-form,
+form.popup {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    
+    .g-recaptcha {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    
+    .btn-primary {
+        margin: 2rem auto;
+    }
+}
+
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .5rem 1rem;
+    margin-bottom: 1rem;
+    
+    &.column {
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: .5rem;
+    }
+}
+
+label {
+    @include font-family-reading;
+    @include font-style(700, .75rem, 1em, $secondary-color-darker);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0;
+}
+
+input {
+    width: 100%;
+    padding: .75rem 1.5rem;
+    @include font-family-reading;
+    @include font-style(400, 1rem, 1em, $web-grey-5);
+    background: white;
+    border: 1px solid $web-grey-2;
+    border-radius: .5rem;
+    
+    &.prefilled {
+        color: $web-grey-3;
+        background: #f2f2f2;
+    }
+    
+    &:hover {
+        border-color: $web-grey-5;
+    }
+    
+    &:focus {
+        color: $web-grey-5;
+        border-color: $admin-primary;
+    }
+    
+    &::placeholder {
+        color: $web-grey-2;
+    }
+    
+    &[type="submit"] {
+        @extend .button;
+        
+        width: fit-content;
+        border: none;
+        margin: 2rem auto;
+        background: $color-success;
+        color: $color-success-darker;
+        
+        &:hover {
+            background: $color-success-dark;
+        }
+        
+        .dashboard & {
+            margin: 0;
+        }
+        
+    }
+}
+
+textarea {
+    background-color:white;
+    outline: none;
+    height:250px;
+    width:100%; max-width:100%;
+    padding: 1rem;
+    @include font-family-reading;
+    @include font-style(400, 1rem, 1.5em, $web-grey-5);
+    border: 1px solid $web-grey-2;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    resize: none;
+    
+    &.small {
+        height: 100px;
+    }
+    
+    .dashboard & {
+        margin: 0;
+    }
+    
+    &:hover {
+        border-color: $web-grey-5;
+    }
+    &:focus {
+        color: $web-grey-5;
+        border-color: $admin-primary;
+    }
+    &.prefilled {
+        color: $web-grey-3;
+        background: #f2f2f2;
+    }
+}
+
+
+
+
+
+/***********************
+Lists
+***********************/

@@ -1,0 +1,40 @@
+/*
+*
+* LOCATION: [core]
+* FOLDER: [scss]
+* FILE NAME: [footer.scss]
+* DESCRIPTION: footer style
+*
+*/
+
+/*******************************************************
+FOOTER
+*******************************************************/
+
+footer {
+	width: 100%;
+	padding: 40px;
+	
+	background: $bg-footer-color;
+	
+	> * {
+		flex: 1;
+		min-width: 100%;
+		gap: 24px;
+	}
+	.footer-logo {
+		display: flex;
+		justify-content: center;
+		img {
+			width: 240px;
+		}
+	}
+	.footer-social {
+		display: flex;
+		gap: 3rem;
+		font-size: 2rem;
+		color: white;
+		justify-content: center;
+		align-items: center;
+	}
+}

@@ -1,0 +1,198 @@
+/*
+*
+* LOCATION: [assets]
+* FOLDER: [scss]
+* FILE NAME: [admin-layout.scss]
+* DESCRIPTION: layout page admin
+*
+*/
+
+
+
+
+
+
+/************************
+Variables ADMIN CSS
+************************/
+$sidemenu-width: 320px;
+$popup-width-small: 420px;
+$popup-width-large: 600px;
+
+
+
+body {
+    font-size: 16px;
+    background-color: $bg-body-admin;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+
+section {
+    width:100%;
+    margin:0 auto;
+    padding: 0;
+}
+
+
+*[class*='grid-layout-'] {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+}
+.grid-layout-2 {
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.grid-layout-3 {
+    @include tablet {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.file-upload {
+    margin-top: 3rem;
+}
+
+
+
+
+
+
+
+/************************
+ALERT MESSAGES in Dashboard
+************************/
+.message-box {
+    display: flex;
+    flex-flow: row nowrap;
+    
+    position: fixed;
+    bottom: 4rem; left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10;
+    
+    -webkit-box-shadow: 0 5px 20px -6px rgba(18,18,18,.4);
+    -moz-box-shadow: 0 5px 20px -6px rgba(18,18,18,.4);
+    box-shadow: 0 5px 20px -6px rgba(18,18,18,.4);
+    
+    .icon {
+        padding: 1rem;
+    }
+    .i-alert {
+        background-color: $color-warning;
+        &:before {
+            font: var(--fa-font-light);
+            content: '\f05a';
+            font-size: 2rem;
+        }
+    }
+    .i-error {
+        background-color: $color-error;
+        &:before {
+            font: var(--fa-font-light);
+            content: '\f057';
+            font-size: 2rem;
+            color: white;
+        }
+    }
+    .i-success {
+        background-color: $color-success;
+        &:before {
+            font: var(--fa-font-light);
+            content: '\f058';
+            font-size: 2rem;
+            color: $color-success-darker;
+        }
+    }
+    p {
+        padding: 1rem;
+        background: $web-grey-6;
+        color: white;
+        font-size: .875rem;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .message-box-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-family: "Font Awesome 6 Pro";
+        font-weight: 300;
+        color: #2e2e2e;
+        content: "\f00d";
+    }
+    
+    &.fade-out {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+/************************
+Layout System
+************************/
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem 1rem;
+    @include tablet {
+        grid-template-columns: $sidemenu-width auto;
+        grid-gap: 1.5rem;
+        padding: 2rem 2rem 1rem 0;
+    }
+    @include desktop {
+        grid-gap: 2rem;
+    }
+}
+
+
+.dashboard-container {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    @include tablet {
+        grid-column: 2;
+    }
+}
+
+
+
+
+
+
+
+/********* FONCTIONS *********/
+.hide,
+.is-hide,
+.is-hidden {
+    display:none !important;
+}
+
+.only-mobile {
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.only-tablet {
+    @include mobile-max {
+        display: none !important;
+    }
+}

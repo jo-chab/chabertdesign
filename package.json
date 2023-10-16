@@ -1,0 +1,18 @@
+{
+  "name": "chabert_design",
+  "version": "2.1.0",
+  "description": "chabert design package",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w assets/scss/ -o assets/css/ --recursive"
+  },
+  "author": "Jonathan",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/"
+  }
+}

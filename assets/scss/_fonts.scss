@@ -1,0 +1,145 @@
+/*
+*
+* LOCATION: [core]
+* FOLDER: [scss]
+* FILE NAME: [fonts.scss]
+* DESCRIPTION: fonts styling elements
+*
+*/
+
+
+@import "font-family";
+
+/*******************************************************
+FAMILY - Font Families
+*******************************************************/
+@mixin font-family-heading() {
+	font-family: 'Gabriela', serif;
+}
+@mixin font-family-reading() {
+	font-family: 'Gilroy', sans-serif;
+}
+
+
+
+/***** TITLE *****/
+h1 {
+	@include font-family-heading();
+	@include font-style(700, 2rem, 1.3em, $secondary-color-darker);
+	margin-bottom: 1.5rem;
+	
+	@include desktop {
+		margin-bottom: 2rem;
+		font-size: 4rem;
+	}
+	
+	[class*="w-hero-"] & {
+		color: white;
+	}
+}
+
+h2 {
+	@include font-family-heading();
+	@include font-style(700, 1.5rem, 1.5em, $secondary-color-darker);
+	margin-bottom: 1.5rem;
+	
+	@include desktop {
+		margin-bottom: 2rem;
+		font-size: 2.5rem;
+	}
+}
+
+h3 {
+	@include font-family-heading();
+	@include font-style(400, 1.25rem, 1.5em, $secondary-color-darker);
+	margin-bottom: 1rem;
+	
+	@include desktop {
+		font-size: 1.75rem;
+	}
+	
+	[class*="w-hero-"] & {
+		color: white;
+	}
+}
+
+h4 {
+	@include font-family-heading();
+	@include font-style(300, 1rem, 1.5em, $secondary-color-darker);
+	
+	@include desktop {
+		font-size: 1.25rem;
+	}
+}
+
+h5 {
+	@include font-family-reading();
+	@include font-style(400, .875rem, 1.5em, $secondary-color-darker);
+}
+
+h6 {
+	@include font-family-reading();
+	@include font-style(400, .75rem, 1.5em, $secondary-color-darker);
+}
+
+
+
+
+
+
+
+
+
+
+/***** PARAGRAPH *****/
+p {
+	@include font-family-reading();
+	@include font-style(300, 1rem, 1.7em, $reading-text);
+	max-width: 800px;
+	margin-bottom: 2rem;
+	@include mobile-xlarge {
+		font-size: 1.125rem;
+	}
+	&.center {
+		margin:0 auto;
+	}
+	
+	&:has(+ p) {
+		margin-bottom: 1rem;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+
+.text-highlight {
+	color: $primary-color;
+}
+.white {
+	color: white;
+}
+.c-light {
+	color: $secondary-color;
+}
+.c-brand {
+	color: $primary-color;
+}
+
+
+
+
+
+

@@ -1,0 +1,246 @@
+/*
+*
+* LOCATION: [core]
+* FOLDER: [assets/scss]
+* FILE NAME: [fonts.scss]
+* DESCRIPTION: icons elements
+*
+*/
+
+/***** FONTAWESOME *****/
+// Use for  FontAwesome family
+// font: var(--fa-font-solid);
+// font: var(--fa-font-regular);
+// font: var(--fa-font-light);
+// font: var(--fa-font-thin);
+// font: var(--fa-font-brands);
+// font: var(--fa-font-sharp-solid);
+// font: var(--fa-font-sharp-regular);
+// font: var(--fa-font-sharp-light);
+// font-family: "Font Awesome Kit";
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    &.icon-atop {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &.mobile-icon-only {
+        span {
+            @include mobile-max {
+                display: none !important;
+            }
+        }
+    }
+    
+    &.icon-only {
+        span {
+            display: none !important;
+        }
+    }
+    
+    &:before,
+    &:after {
+        /* Common Properties: All required to make icons render reliably - we did this above but it's included here for the full demo */
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1em;
+    }
+    
+}
+
+.add {
+    &-basic:after {
+        font: var(--fa-font-sharp-solid);
+        content: '\2b';
+        font-size: 1.25em;
+    }
+    
+    &-news:before {
+        font-family: "Font Awesome Kit";
+        font-size: .875em;
+        content: '\e001';
+    }
+}
+
+.delete {
+    &-basic:before {
+        font-family: "Font Awesome Kit";
+        content: '\e001';
+        font-size: .875em;
+    }
+    
+    &-news:before {
+        font-family: "Font Awesome Kit";
+        font-size: .875em;
+        content: '\e003';
+    }
+}
+
+.i-long-arrow:after {
+    font-family: "Font Awesome Kit";
+    content: '\e00f';
+    font-size: 1.5em;
+}
+
+.i-more:before {
+    font: var(--fa-font-sharp-light);
+    content: '\f055';
+    
+    .dashboard & {
+        font-size: 1.5em !important;
+    }
+}
+
+.i-check:before {
+    font: var(--fa-font-light);
+    content: '\f058';
+    font-size: 1.25em;
+}
+
+.menu-toggle-admin:before {
+    font: var(--fa-font-light);
+    content: '\e24e';
+}
+
+.i-logout:before {
+    font: var(--fa-font-solid);
+    content: '\f08b';
+}
+
+.i-homepage {
+    &:before {
+        font: var(--fa-font-regular);
+        content: '\e487';
+    }
+    
+    &:hover:before {
+        font: var(--fa-font-solid);
+    }
+}
+.i-homepage-2 {
+    &:before {
+        font-family: "Font Awesome Kit";
+        content: '\e016';
+    }
+    
+    &:hover:before {
+        content: '\e018';
+    }
+}
+
+.i-facebook:before {
+    font: var(--fa-font-brands);
+    content: '\f39e';
+}
+
+.i-instagram:before {
+    font: var(--fa-font-brands);
+    content: '\f16d';
+}
+
+.i-behance:before {
+    font: var(--fa-font-brands);
+    content: '\f1b4';
+}
+
+.i-send:after {
+    font: var(--fa-font-regular);
+    content: '\f1d8';
+}
+
+
+/******************************************
+ADMIN ICONS
+******************************************/
+// BTN icon on ADMIN
+.btn-disable:before {
+    font: var(--fa-font-light);
+    content: '\f070';
+    font-size: 1.5em;
+}
+
+.btn-activate:before {
+    font: var(--fa-font-light);
+    content: '\f06e';
+    font-size: 1.5em;
+}
+
+.btn-delete:before {
+    font: var(--fa-font-light);
+    content: '\f2ed';
+    font-size: 1.5em;
+}
+
+.btn-cancel:before {
+    font: var(--fa-font-light);
+    content: '\f057';
+    font-size: 1.5em;
+}
+
+.btn-update:before {
+    font: var(--fa-font-light);
+    content: '\f044';
+    font-size: 1.5em;
+}
+
+.btn-revert:before {
+    font: var(--fa-font-light);
+    content: '\f12d';
+    font-size: 1.5em;
+}
+
+.btn-confirm:before,
+.btn-validate:before {
+    font: var(--fa-font-light);
+    content: '\f058';
+    font-size: 1.5em;
+}
+
+
+.i-bdd:before {
+    font: var(--fa-font-brands);
+    content: '\f388';
+    font-size: 2em;
+}
+
+.i-config:before {
+    font-family: "Font Awesome Kit";
+    content: '\e017';
+    font-size: 1.25em;
+}
+
+.i-client:before {
+    font: var(--fa-font-light);
+    content: '\e068';
+    font-size: 1.25em;
+}
+
+.i-project:before {
+    font: var(--fa-font-light);
+    content: '\f390';
+    font-size: 1.25em;
+}
+
+.i-service:before {
+    font: var(--fa-font-light);
+    content: '\f03a';
+    font-size: 1.25em;
+}
+
+
+
+
+
+
+
+
+
+
+
+

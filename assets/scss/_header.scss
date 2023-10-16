@@ -1,0 +1,118 @@
+/*
+*
+* LOCATION: [core]
+* FOLDER: [scss]
+* FILE NAME: [header.scss]
+* DESCRIPTION: header style
+*
+*/
+
+/****************************************
+HEADER CSS -
+****************************************/
+header {
+	width: 100%;
+	padding: $margin-m;
+	position: absolute; top: 0; left: 0; z-index: 200;
+	@include tablet {
+		padding: $margin-t;
+	}
+	@include desktop {
+		padding: 16px $margin-d;
+	}
+	@include desktop-large {
+		padding: 16px $margin-dl;
+	}
+}
+
+nav {
+	@extend .web-layout;
+	max-width: $website-max-width;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	&.desktop-nav {
+		@include tablet-max {
+			display: none;
+		}
+	}
+	&.mobile-nav {
+		@include desktop {
+			display: none;
+		}
+	}
+}
+
+
+.header_logo {
+	width: 120px;
+	height: fit-content;
+	@include desktop {
+		width: 240px;
+	}
+	
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.nav-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	
+	@include tablet {
+		flex-direction: row;
+		gap: 40px;
+	}
+	
+	&-el {
+		@include font-family-reading;
+		@include font-style(300, 1.25rem, 1em, white);
+		padding: 24px 0;
+	}
+	
+	&.mobile {
+		position: fixed;
+		top:0;
+		left:0;
+		
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		
+		width: 100%;
+		height: 100%;
+		background: $bg-body;
+		
+		transform: translateX(105%);
+		transition: all .2s ease;
+		
+		&.open {
+			transform: translateX(0);
+			transition: all .2s ease;
+		}
+		
+		.nav-menu-el {
+			@include font-style(300, 2rem, 1em, $web-grey-5);
+		}
+	}
+	
+	.cta-close {
+		position: absolute;
+		top:32px; right: 32px; z-index: 99;
+		font-size: 2em;
+		color: $secondary-color;
+	}
+	
+}
+
+
+
+#open-nav-mobile {
+	font-size: 2em;
+	color: white;
+}
+

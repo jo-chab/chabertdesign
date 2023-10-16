@@ -1,0 +1,129 @@
+/*
+*
+* LOCATION: [core]
+* FOLDER: [scss]
+* FILE NAME: [variables.scss]
+*
+*/
+
+/*******************************************************
+VARIABLES
+*******************************************************/
+
+
+
+/***** COLORS *****/
+$bg-body: #f2f2f2;
+$bg-body-admin: #f2f2f2;
+
+
+$web-grey-1: #f2f2f2;
+$web-grey-2: #d3d3d3;
+$web-grey-3: #aca9a9;
+$web-grey-4: #5f6369;
+$web-grey-5: #343741;
+$web-grey-6: #181818;
+
+$primary-color: #ff1541;
+$primary-color-light: #f45967;
+$primary-color-lighter: #ffe7eb;
+$primary-color-dark: #e4001b;
+$primary-color-darker: #c80004;
+
+$secondary-color: #8d949b;
+$secondary-color-light: #D0D3D4;
+$secondary-color-lighter: #ebf2fa;
+$secondary-color-dark: #52585f;
+$secondary-color-darker: #141a1f;
+
+
+$accent-color: #03dac4;
+$accent-color-light: #92e9dc;
+$accent-color-lighter: #d4f6f2;
+$accent-color-dark: #00c7ab;
+$accent-color-darker: #00b798;
+
+
+/****** HEADER & FOOTER ******/
+$bg-header-color: $web-grey-6;
+$bg-dark-header-color: $secondary-color;
+$bg-footer-color: $primary-color;
+$bg-dark-footer-color: $secondary-color;
+
+
+/****** TITLES & TEXTS ******/
+$title-color: $primary-color;
+$title-light: $secondary-color-darker;
+$title-accent: $accent-color;
+$reading-text: $secondary-color-dark;
+
+
+
+
+/****** MESSAGES & ALERTS ******/
+$color-success: #00E676;
+$color-success-light: #69F0AE;
+$color-success-lighter: #e1ffe9;
+$color-success-dark: #00bd60;
+$color-success-darker: #00732e;
+
+$color-warning: #ffbe2e;
+$color-warning-light: #fee685;
+$color-warning-lighter: #fffcec;
+$color-warning-dark: #e5a000;
+$color-warning-darker: #936f38;
+
+$color-error: #ff1540;
+$color-error-light: #f45967;
+$color-error-lighter: #ffe7eb;
+$color-error-dark: #e4001b;
+$color-error-darker: #c80004;
+
+
+/*******************************************************
+ADMIN
+*******************************************************/
+$admin-primary: #6300ee;
+$admin-primary-light: #9965f4;
+$admin-primary-lighter: #efe5fd;
+$admin-primary-dark: #5300e8;
+$admin-primary-darker: #3700b3;
+
+$admin-secondary: #03dac4;
+$admin-secondary-light: #92e9dc;
+$admin-secondary-lighter: #d4f6f2;
+$admin-secondary-dark: #00c7ab;
+$admin-secondary-darker: #00b798;
+
+$admin-alert: $color-warning;
+$admin-confirm: $color-success;
+$admin-delete: $color-error;
+$admin-update: #eef1f7;
+$admin-update-2: #434C57;
+
+
+
+
+/*******************************************************
+SPACES VARIABLES
+*******************************************************/
+$margin-m: 1.5rem;
+$margin-t: 2.5rem;
+$margin-d: 5rem;
+$margin-dl: 8rem;
+
+$space-m: 4rem;
+$space-t: 5rem;
+$space-d: 8rem;
+
+
+$text-content-max-width: 960px;
+
+/*******************************************************
+Z-INDEX
+*******************************************************/
+$z-home-hero-overlay: 2;
+$z-home-hero-content: 3;
+$z-top-menu: 4;
+$z-side-menu: 5;
+$z-alert-popup: 99;
