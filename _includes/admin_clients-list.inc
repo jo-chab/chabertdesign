@@ -6,7 +6,7 @@
         <div class="btn-primary btn-add small icon i-more mobile-icon-only js-content-add"><span>Ajouter un client</span></div>
         
         <div class="content-add">
-            <form method="post" action="action_client_add" enctype="multipart/form-data">
+            <form method="post" action="action_client-add" enctype="multipart/form-data">
                 <div class="d-form-wrapper">
                     
                     <div class="grid-layout-2">

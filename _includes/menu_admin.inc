@@ -22,7 +22,7 @@
     <li class="menu-element icon i-project">Content</li>
     <ul class="list-subnav">
         <li class="ss-menu-element"><a href="?content=10">Clients</a></li>
-        <li class="ss-menu-element"><a href="?content=20">Project</a></li>
+        <li class="ss-menu-element"><a href="?content=20">Projects</a></li>
         <li class="ss-menu-element"><a href="?content=23">Images</a></li>
         <li class="ss-menu-element"><a href="?content=30">Services</a></li>
     </ul>
