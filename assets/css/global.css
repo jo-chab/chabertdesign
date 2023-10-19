@@ -1277,6 +1277,21 @@ textarea {
 /***********************
 Lists
 ***********************/
+.list-img-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-block-end: 4rem; }
+  @media (min-width: 768px) {
+    .list-img-project {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem; } }
+  .list-img-project .img-project-el {
+    width: 100%; }
+    .list-img-project .img-project-el img {
+      width: 100%;
+      max-width: 100%; }
+
 /*
 *
 * LOCATION: [core]

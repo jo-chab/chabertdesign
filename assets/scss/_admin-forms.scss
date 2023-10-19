@@ -183,7 +183,7 @@ ADMIN custom checkbox
     }
     
     &:has(input[type="checkbox"]:checked) {
-        border-color: $admin-primary-lighter;
+        border-color: $admin-primary-darker;
         background-color: $admin-primary-lighter;
         color: $admin-primary-darker;
     }

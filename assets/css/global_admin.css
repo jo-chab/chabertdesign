@@ -1205,6 +1205,21 @@ textarea {
 /***********************
 Lists
 ***********************/
+.list-img-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-block-end: 4rem; }
+  @media (min-width: 768px) {
+    .list-img-project {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem; } }
+  .list-img-project .img-project-el {
+    width: 100%; }
+    .list-img-project .img-project-el img {
+      width: 100%;
+      max-width: 100%; }
+
 /*
 *
 * LOCATION: [assets]
@@ -1485,7 +1500,7 @@ ADMIN custom checkbox
     border-color: #52585f;
     color: #52585f; }
   .custom-checkbox:has(input[type="checkbox"]:checked) {
-    border-color: #efe5fd;
+    border-color: #3700b3;
     background-color: #efe5fd;
     color: #3700b3; }
   .custom-checkbox input[type="checkbox"] {

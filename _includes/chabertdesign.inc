@@ -1,7 +1,7 @@
 <?php
     
     
-    $host = "69.90.66.20";
+    $host = "64.34.75.151";
     $login = "chabe642";
     $pass = "udh!exr6HED3yht8dbg";
     $base = "chabe642_chabertdesign_new";

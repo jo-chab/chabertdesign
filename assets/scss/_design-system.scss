@@ -743,3 +743,22 @@ textarea {
 /***********************
 Lists
 ***********************/
+.list-img-project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-block-end: 4rem;
+    @include tablet {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+    }
+    
+    .img-project-el {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
