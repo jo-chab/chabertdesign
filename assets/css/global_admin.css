@@ -541,6 +541,11 @@ ADMIN ICONS
   content: '\f03a';
   font-size: 1.25em; }
 
+.i-image:before {
+  font: var(--fa-font-light);
+  content: '\f03e';
+  font-size: 1.25em; }
+
 /*
 *
 * LOCATION: [assets]
@@ -1215,10 +1220,17 @@ Lists
       grid-template-columns: repeat(5, 1fr);
       gap: 2rem; } }
   .list-img-project .img-project-el {
-    width: 100%; }
-    .list-img-project .img-project-el img {
-      width: 100%;
-      max-width: 100%; }
+    width: 100%;
+    position: relative; }
+    .list-img-project .img-project-el .btn-delete {
+      position: absolute;
+      top: .5rem;
+      left: .5rem;
+      z-index: 2;
+      padding: .5rem; }
+  .list-img-project img {
+    width: 100%;
+    max-width: 100%; }
 
 /*
 *

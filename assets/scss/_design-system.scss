@@ -750,15 +750,25 @@ Lists
     margin-block-end: 4rem;
     @include tablet {
         grid-template-columns: repeat(5, 1fr);
+        //grid-template-columns: 1fr;
         gap: 2rem;
     }
     
     .img-project-el {
         width: 100%;
+        position: relative;
         
-        img {
-            width: 100%;
-            max-width: 100%;
+        .btn-delete {
+            position: absolute;
+            top: .5rem;
+            left: .5rem;
+            z-index: 2;
+            padding: .5rem;
         }
+    }
+    
+    img {
+        width: 100%;
+        max-width: 100%;
     }
 }

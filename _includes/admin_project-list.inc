@@ -22,8 +22,7 @@
                     echo "<li class='dashboard-list-elements'>
                                     <div class='element-title content-id'><span>$name</span> – $title</div>
                                     <div class='list-cta content-btn'>
-                                        <form action='index?content=22' method='post'>
-                                            <input type='hidden' name='element' value='$project'>
+                                        <form action='index?content=22&project=$project' method='post'>
                                             <div class='btn-primary btn-update small icon mobile-icon-only'><span>Modifier</span></div>
                                         </form>
                                     </div>	
