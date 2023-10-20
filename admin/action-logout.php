@@ -1,1 +1,1 @@
-<?php	session_start();	mysqli_close();	session_destroy();    $websiteUrl = 'https://staging.chabertdesign.com/';	header('Location: '.$websiteUrl.'?m=12');	exit();?>
+<?php	session_start();	mysqli_close();	session_destroy();    $websiteUrl = 'https://www.chabertdesign.com/';	header('Location: '.$websiteUrl.'?m=12');	exit();?>
