@@ -15,17 +15,17 @@
     
     function retour_erreur($page, $code_erreur)
     {
-        header('Location: https://staging.chabertdesign.com/admin/index.php?content=' . $page . '&m=' . $code_erreur);
+        header('Location: https://www.chabertdesign.com/admin/index.php?content=' . $page . '&m=' . $code_erreur);
         exit;
     }
     function retour_erreur_content($page, $code_erreur, $parameter, $value)
     {
-        header('Location: https://staging.chabertdesign.com/admin/index.php?content=' . $page . '&m=' . $code_erreur. '&' . $parameter. '=' . $value);
+        header('Location: https://www.chabertdesign.com/admin/index.php?content=' . $page . '&m=' . $code_erreur. '&' . $parameter. '=' . $value);
         exit;
     }
     
     
-    $websiteUrl = 'https://staging.chabertdesign.com/';
+    $websiteUrl = 'https://www.chabertdesign.com/';
     $root = '/';
     
 
