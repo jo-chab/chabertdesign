@@ -182,10 +182,17 @@ ADMIN custom checkbox
         color: $secondary-color-dark;
     }
     
+    &:has(input[type="checkbox"]) {
+        .list-img-project & {
+            opacity: .4;
+        }
+    }
+    
     &:has(input[type="checkbox"]:checked) {
         border-color: $admin-primary-darker;
         background-color: $admin-primary-lighter;
         color: $admin-primary-darker;
+        opacity: 1;
     }
     
     input[type="checkbox"] {

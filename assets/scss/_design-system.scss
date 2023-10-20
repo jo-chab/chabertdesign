@@ -343,26 +343,27 @@ DESIGN SYSTEM – Buttons
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 1px;
-    }
-    &.btn-update {
-        background-color: $admin-primary;
-        @include tablet {
-            &:hover {
-                background-color: $admin-primary-darker;
+        
+        &.btn-update {
+            background-color: $admin-primary;
+            @include tablet {
+                &:hover {
+                    background-color: $admin-primary-darker;
+                }
             }
         }
-    }
-    
-    &.btn-delete,
-    &.btn-cancel,
-    &.btn-disable,
-    &.btn-activate,
-    &.btn-revert {
-        background-color: $admin-update;
-        color: $admin-update-2;
-        @include tablet {
-            &:hover {
-                color: $color-error;
+        
+        &.btn-delete,
+        &.btn-cancel,
+        &.btn-disable,
+        &.btn-activate,
+        &.btn-revert {
+            background-color: $admin-update;
+            color: $admin-update-2;
+            @include tablet {
+                &:hover {
+                    color: $color-error;
+                }
             }
         }
     }
@@ -448,16 +449,27 @@ DESIGN SYSTEM – Buttons
     }
     
     // ADMIN BTNs
-    &.btn-delete,
-    &.btn-cancel,
-    &.btn-disable,
-    &.btn-activate,
-    &.btn-revert {
+    .dashboard & {
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
         border-color: $secondary-color;
         color: $secondary-color;
         &:hover {
-            border-color: $color-error;
-            color: $color-error;
+            border-color: $admin-primary;
+            color: $admin-primary;
+        }
+        
+        &.btn-delete,
+        &.btn-cancel,
+        &.btn-disable,
+        &.btn-activate,
+        &.btn-revert {
+            &:hover {
+                border-color: $color-error;
+                color: $color-error;
+            }
         }
     }
     
@@ -747,7 +759,7 @@ Lists
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-block-end: 4rem;
+    margin-block: 2rem 4rem;
     @include tablet {
         grid-template-columns: repeat(5, 1fr);
         //grid-template-columns: 1fr;

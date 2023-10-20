@@ -267,7 +267,7 @@ PAGE PROJECTS
         justify-content: center;
     }
     
-    &-description {
+    &-excerpt {
         @include font-style(400, 1.5rem, 1.5em, $secondary-color);
         @include desktop {
             font-size: 2rem;
@@ -276,7 +276,7 @@ PAGE PROJECTS
         text-align: center;
     }
     
-    &-excerpt {
+    &-description {
         font-weight: 300;
         text-align: center;
         margin: 0 auto;
