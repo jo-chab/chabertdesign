@@ -541,6 +541,31 @@ ADMIN ICONS
   content: '\f03a';
   font-size: 1.25em; }
 
+.i-image:before {
+  font: var(--fa-font-light);
+  content: '\f03e';
+  font-size: 1.25em; }
+
+.i-image-check:before {
+  font-family: "Font Awesome Kit";
+  content: '\e01b';
+  font-size: 1.25em; }
+
+.i-image-remove:before {
+  font-family: "Font Awesome Kit";
+  content: '\e01c';
+  font-size: 1.25em; }
+
+.i-image-library:before {
+  font-family: "Font Awesome Kit";
+  content: '\e01a';
+  font-size: 1.25em; }
+
+.i-image-select:before {
+  font-family: "Font Awesome Kit";
+  content: '\e019';
+  font-size: 1.25em; }
+
 /*
 *
 * LOCATION: [assets]
@@ -929,17 +954,17 @@ DESIGN SYSTEM – Buttons
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px; }
-  .btn-primary.btn-update {
-    background-color: #6300ee; }
-    @media (min-width: 768px) {
-      .btn-primary.btn-update:hover {
-        background-color: #3700b3; } }
-  .btn-primary.btn-delete, .btn-primary.btn-cancel, .btn-primary.btn-disable, .btn-primary.btn-activate, .btn-primary.btn-revert {
-    background-color: #eef1f7;
-    color: #434C57; }
-    @media (min-width: 768px) {
-      .btn-primary.btn-delete:hover, .btn-primary.btn-cancel:hover, .btn-primary.btn-disable:hover, .btn-primary.btn-activate:hover, .btn-primary.btn-revert:hover {
-        color: #ff1540; } }
+    .dashboard .btn-primary.btn-update {
+      background-color: #6300ee; }
+      @media (min-width: 768px) {
+        .dashboard .btn-primary.btn-update:hover {
+          background-color: #3700b3; } }
+    .dashboard .btn-primary.btn-delete, .dashboard .btn-primary.btn-cancel, .dashboard .btn-primary.btn-disable, .dashboard .btn-primary.btn-activate, .dashboard .btn-primary.btn-revert {
+      background-color: #eef1f7;
+      color: #434C57; }
+      @media (min-width: 768px) {
+        .dashboard .btn-primary.btn-delete:hover, .dashboard .btn-primary.btn-cancel:hover, .dashboard .btn-primary.btn-disable:hover, .dashboard .btn-primary.btn-activate:hover, .dashboard .btn-primary.btn-revert:hover {
+          color: #ff1540; } }
   .btn-primary.btn-confirm, .btn-primary.btn-validate, .btn-primary.btn-add {
     background-color: #00E676;
     color: #00732e;
@@ -992,10 +1017,16 @@ DESIGN SYSTEM – Buttons
       background: white;
       border-color: white;
       color: #ff1541; }
-  .btn-secondary.btn-delete, .btn-secondary.btn-cancel, .btn-secondary.btn-disable, .btn-secondary.btn-activate, .btn-secondary.btn-revert {
+  .dashboard .btn-secondary {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     border-color: #8d949b;
     color: #8d949b; }
-    .btn-secondary.btn-delete:hover, .btn-secondary.btn-cancel:hover, .btn-secondary.btn-disable:hover, .btn-secondary.btn-activate:hover, .btn-secondary.btn-revert:hover {
+    .dashboard .btn-secondary:hover {
+      border-color: #6300ee;
+      color: #6300ee; }
+    .dashboard .btn-secondary.btn-delete:hover, .dashboard .btn-secondary.btn-cancel:hover, .dashboard .btn-secondary.btn-disable:hover, .dashboard .btn-secondary.btn-activate:hover, .dashboard .btn-secondary.btn-revert:hover {
       border-color: #ff1540;
       color: #ff1540; }
 
@@ -1205,6 +1236,28 @@ textarea {
 /***********************
 Lists
 ***********************/
+.list-img-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-block: 2rem 4rem; }
+  @media (min-width: 768px) {
+    .list-img-project {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem; } }
+  .list-img-project .img-project-el {
+    width: 100%;
+    position: relative; }
+    .list-img-project .img-project-el .btn-delete {
+      position: absolute;
+      top: .5rem;
+      left: .5rem;
+      z-index: 2;
+      padding: .5rem; }
+  .list-img-project img {
+    width: 100%;
+    max-width: 100%; }
+
 /*
 *
 * LOCATION: [assets]
@@ -1484,10 +1537,13 @@ ADMIN custom checkbox
   .custom-checkbox:hover {
     border-color: #52585f;
     color: #52585f; }
+  .list-img-project .custom-checkbox:has(input[type="checkbox"]) {
+    opacity: .4; }
   .custom-checkbox:has(input[type="checkbox"]:checked) {
-    border-color: #efe5fd;
+    border-color: #3700b3;
     background-color: #efe5fd;
-    color: #3700b3; }
+    color: #3700b3;
+    opacity: 1; }
   .custom-checkbox input[type="checkbox"] {
     display: none; }
 
@@ -1506,9 +1562,14 @@ ADMIN custom checkbox
   margin: 2rem 0 0;
   padding: 0;
   gap: 1rem; }
+  .d-form-cta.header {
+    margin: 0 0 3rem;
+    justify-content: flex-start; }
   .content-add .d-form-cta {
     justify-content: center;
     margin-bottom: 3rem; }
+  .d-form-cta [class*='btn-'] {
+    margin: 0 !important; }
 
 .inactive > * {
   opacity: 0.2; }

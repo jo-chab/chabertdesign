@@ -17,9 +17,18 @@
     padding: 0;
     gap: 1rem;
     
+    &.header {
+        margin: 0 0 3rem;
+        justify-content: flex-start;
+    }
+    
     .content-add & {
         justify-content: center;
         margin-bottom: 3rem;
+    }
+    
+    [class*='btn-'] {
+        margin: 0 !important;
     }
     
 }
@@ -60,6 +69,7 @@ form.content-delete {
     }
 }
 
+
 /*************************************
 ADMIN – DEFAULT
 *************************************/
@@ -87,15 +97,18 @@ ADMIN – DEFAULT
             padding: 3rem;
         }
     }
+    
     a {
         gap: 1rem;
         font-size: 1.5rem;
         opacity: 1;
         transition: all .3s ease;
         color: $admin-primary;
+        
         &:hover {
             opacity: .5;
         }
+        
         @include tablet {
             font-size: 2rem;
         }
@@ -112,6 +125,7 @@ ADMIN – DEFAULT
         }
     }
 }
+
 
 /*************************************
 ADMIN – PAGE
@@ -219,11 +233,6 @@ ADMIN – PAGE
 }
 
 
-
-
-
-
-
 /*************************************
 IMAGES AND File upload
 *************************************/
@@ -231,6 +240,7 @@ IMAGES AND File upload
     width: 100%;
     max-width: 240px;
     margin-bottom: 1.5rem;
+    
     &.reverse {
         background: $secondary-color-light;
         padding: .5rem;

@@ -1,7 +1,7 @@
 <?php
     
     
-    $host = "69.90.66.20";
+    $host = "64.34.75.151";
     $login = "chabe642";
     $pass = "udh!exr6HED3yht8dbg";
     $base = "chabe642_chabertdesign_new";
@@ -16,6 +16,11 @@
     function retour_erreur($page, $code_erreur)
     {
         header('Location: https://staging.chabertdesign.com/admin/index.php?content=' . $page . '&m=' . $code_erreur);
+        exit;
+    }
+    function retour_erreur_content($page, $code_erreur, $parameter, $value)
+    {
+        header('Location: https://staging.chabertdesign.com/admin/index.php?content=' . $page . '&m=' . $code_erreur. '&' . $parameter. '=' . $value);
         exit;
     }
     

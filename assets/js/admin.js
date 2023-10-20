@@ -7,7 +7,6 @@
     });
 
 
-
     function toggleContentAdd() {
         const addButton = document.querySelector('.js-content-add');
         const contentAdd = document.querySelector('.content-add');
@@ -17,6 +16,8 @@
             addButton.classList.toggle('is-hide');
         });
     }
+
+
     function toggleContentUpdate() {
         const updateButtons = document.querySelectorAll('.js-content-update');
 

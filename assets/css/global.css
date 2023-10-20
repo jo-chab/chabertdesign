@@ -541,6 +541,31 @@ ADMIN ICONS
   content: '\f03a';
   font-size: 1.25em; }
 
+.i-image:before {
+  font: var(--fa-font-light);
+  content: '\f03e';
+  font-size: 1.25em; }
+
+.i-image-check:before {
+  font-family: "Font Awesome Kit";
+  content: '\e01b';
+  font-size: 1.25em; }
+
+.i-image-remove:before {
+  font-family: "Font Awesome Kit";
+  content: '\e01c';
+  font-size: 1.25em; }
+
+.i-image-library:before {
+  font-family: "Font Awesome Kit";
+  content: '\e01a';
+  font-size: 1.25em; }
+
+.i-image-select:before {
+  font-family: "Font Awesome Kit";
+  content: '\e019';
+  font-size: 1.25em; }
+
 /*
 *
 * LOCATION: [core]
@@ -713,13 +738,7 @@ article {
       justify-content: flex-end; }
   article.wrapper-full {
     max-width: unset;
-    padding: 4rem; }
-    @media (min-width: 768px) {
-      article.wrapper-full {
-        padding: 1.5rem 5rem; } }
-    @media (min-width: 1024px) {
-      article.wrapper-full {
-        padding: 2rem 8rem; } }
+    padding: 0; }
   article.wrapper-text {
     max-width: 960px; }
 
@@ -1001,17 +1020,17 @@ DESIGN SYSTEM – Buttons
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px; }
-  .btn-primary.btn-update {
-    background-color: #6300ee; }
-    @media (min-width: 768px) {
-      .btn-primary.btn-update:hover {
-        background-color: #3700b3; } }
-  .btn-primary.btn-delete, .btn-primary.btn-cancel, .btn-primary.btn-disable, .btn-primary.btn-activate, .btn-primary.btn-revert {
-    background-color: #eef1f7;
-    color: #434C57; }
-    @media (min-width: 768px) {
-      .btn-primary.btn-delete:hover, .btn-primary.btn-cancel:hover, .btn-primary.btn-disable:hover, .btn-primary.btn-activate:hover, .btn-primary.btn-revert:hover {
-        color: #ff1540; } }
+    .dashboard .btn-primary.btn-update {
+      background-color: #6300ee; }
+      @media (min-width: 768px) {
+        .dashboard .btn-primary.btn-update:hover {
+          background-color: #3700b3; } }
+    .dashboard .btn-primary.btn-delete, .dashboard .btn-primary.btn-cancel, .dashboard .btn-primary.btn-disable, .dashboard .btn-primary.btn-activate, .dashboard .btn-primary.btn-revert {
+      background-color: #eef1f7;
+      color: #434C57; }
+      @media (min-width: 768px) {
+        .dashboard .btn-primary.btn-delete:hover, .dashboard .btn-primary.btn-cancel:hover, .dashboard .btn-primary.btn-disable:hover, .dashboard .btn-primary.btn-activate:hover, .dashboard .btn-primary.btn-revert:hover {
+          color: #ff1540; } }
   .btn-primary.btn-confirm, .btn-primary.btn-validate, .btn-primary.btn-add {
     background-color: #00E676;
     color: #00732e;
@@ -1064,10 +1083,16 @@ DESIGN SYSTEM – Buttons
       background: white;
       border-color: white;
       color: #ff1541; }
-  .btn-secondary.btn-delete, .btn-secondary.btn-cancel, .btn-secondary.btn-disable, .btn-secondary.btn-activate, .btn-secondary.btn-revert {
+  .dashboard .btn-secondary {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     border-color: #8d949b;
     color: #8d949b; }
-    .btn-secondary.btn-delete:hover, .btn-secondary.btn-cancel:hover, .btn-secondary.btn-disable:hover, .btn-secondary.btn-activate:hover, .btn-secondary.btn-revert:hover {
+    .dashboard .btn-secondary:hover {
+      border-color: #6300ee;
+      color: #6300ee; }
+    .dashboard .btn-secondary.btn-delete:hover, .dashboard .btn-secondary.btn-cancel:hover, .dashboard .btn-secondary.btn-disable:hover, .dashboard .btn-secondary.btn-activate:hover, .dashboard .btn-secondary.btn-revert:hover {
       border-color: #ff1540;
       color: #ff1540; }
 
@@ -1277,6 +1302,28 @@ textarea {
 /***********************
 Lists
 ***********************/
+.list-img-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-block: 2rem 4rem; }
+  @media (min-width: 768px) {
+    .list-img-project {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem; } }
+  .list-img-project .img-project-el {
+    width: 100%;
+    position: relative; }
+    .list-img-project .img-project-el .btn-delete {
+      position: absolute;
+      top: .5rem;
+      left: .5rem;
+      z-index: 2;
+      padding: .5rem; }
+  .list-img-project img {
+    width: 100%;
+    max-width: 100%; }
+
 /*
 *
 * LOCATION: [core]
@@ -1608,7 +1655,7 @@ PAGE PROJECTS
   gap: 40px;
   justify-content: center; }
 
-.case-study-description {
+.case-study-excerpt {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.5em;
@@ -1616,10 +1663,10 @@ PAGE PROJECTS
   line-height: 1.6em;
   text-align: center; }
   @media (min-width: 1024px) {
-    .case-study-description {
+    .case-study-excerpt {
       font-size: 2rem; } }
 
-.case-study-excerpt {
+.case-study-description {
   font-weight: 300;
   text-align: center;
   margin: 0 auto; }

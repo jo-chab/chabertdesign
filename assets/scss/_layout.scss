@@ -213,14 +213,7 @@ article {
     
     &.wrapper-full {
         max-width: unset;
-        padding: $space-m;
-        
-        @include tablet {
-            padding: 1.5rem $space-t;
-        }
-        @include desktop {
-            padding: 2rem $space-d;
-        }
+        padding: 0;
     }
     
     &.wrapper-text {
