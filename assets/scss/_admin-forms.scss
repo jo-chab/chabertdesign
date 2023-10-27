@@ -116,7 +116,8 @@ input[type='date'] {
 ADMIN switch buttons
 ************************************/
 /* Hide the default checkbox */
-.switch-checkbox {
+.switch-checkbox,
+.star-checkbox {
     display: none;
 }
 
@@ -150,6 +151,28 @@ ADMIN switch buttons
     transform: translateX(30px);
 }
 
+form.switch-status {
+    display: grid;
+    gap: .25rem;
+}
+
+/* Style star checkbox */
+.star-container {
+    display: block;
+}
+.switch-star:before {
+
+}
+.star-checkbox + .switch-star:before {
+    font: var(--fa-font-sharp-light);
+    font-size: 1.5rem;
+    content: '\e28b';
+    color: gold;
+}
+.star-checkbox:checked + .switch-star:before {
+    font: var(--fa-font-sharp-solid);
+    font-size: 1.5rem;
+}
 
 
 

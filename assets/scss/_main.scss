@@ -222,15 +222,15 @@ PAGE PROJECTS
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 24px;
+    grid-gap: 1rem;
     
     @include tablet {
-        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
     
-    @include desktop-medium {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 64px;
+    @include desktop-large {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -263,49 +263,45 @@ PAGE PROJECTS
     }
     
     &-brief {
-        gap: 40px;
+        gap: .5rem;
         justify-content: center;
     }
     
     &-excerpt {
         @include font-style(400, 1.5rem, 1.5em, $secondary-color);
+        margin-bottom: 2rem;
         @include desktop {
+            margin-bottom: 3rem;
             font-size: 2rem;
         }
         line-height: 1.6em;
-        text-align: center;
-    }
-    
-    &-description {
-        font-weight: 300;
-        text-align: center;
-        margin: 0 auto;
     }
     
     &-goal {
         @include font-family-heading();
         @include font-style(400, 1.25rem, 1.7em, $reading-text);
-        text-align: center;
-        
+        margin-bottom: 2rem;
         @include desktop {
+            margin-bottom: 3rem;
             font-size: 1.5rem;
         }
-        
-        &:empty {
-            display: none;
-        }
+    }
+    
+    &-description {
+        font-weight: 300;
+        margin: 0 auto 0 0;
     }
     
     &-gallery {
         padding: 0;
         
         &:last-of-type {
-            margin-bottom: 120px;
+            margin-bottom: 8rem;
         }
     }
 }
 
 .gallery-secondary .wrapper {
-    gap: 40px;
+    gap: 1rem;
 }
 

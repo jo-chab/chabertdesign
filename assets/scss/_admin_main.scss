@@ -262,3 +262,40 @@ span.logo-mini {
         width: 100%;
     }
 }
+
+
+
+
+
+/***********************
+Lists
+***********************/
+.list-img-project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-block: 2rem 4rem;
+    @include tablet {
+        grid-template-columns: repeat(5, 1fr);
+        //grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .img-project-el {
+        width: 100%;
+        position: relative;
+        
+        .btn-delete {
+            position: absolute;
+            top: .5rem;
+            left: .5rem;
+            z-index: 2;
+            padding: .5rem;
+        }
+    }
+    
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
