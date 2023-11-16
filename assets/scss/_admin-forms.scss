@@ -125,7 +125,7 @@ ADMIN switch buttons
 .switch-container {
     display: inline-block;
     position: relative;
-    width: 60px;
+    width: 48px;
     height: 30px;
     background-color: #ccc; /* Default background color */
     border-radius: 15px;
@@ -148,7 +148,7 @@ ADMIN switch buttons
     background-color: #4CAF50;
 }
 .switch-checkbox:checked + .switch-knob {
-    transform: translateX(30px);
+    transform: translateX(18px);
 }
 
 form.switch-status {
@@ -166,12 +166,18 @@ form.switch-status {
 .star-checkbox + .switch-star:before {
     font: var(--fa-font-sharp-light);
     font-size: 1.5rem;
-    content: '\e28b';
-    color: gold;
+    content: '\f5a2';
+    color: $secondary-color-light;
+}
+.star-checkbox:hover + .switch-star:before {
+    cursor: pointer;
+    font: var(--fa-font-sharp-solid);
+    font-size: 1.5rem;
 }
 .star-checkbox:checked + .switch-star:before {
     font: var(--fa-font-sharp-solid);
     font-size: 1.5rem;
+    color: gold;
 }
 
 

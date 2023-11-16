@@ -105,7 +105,7 @@ ALERT BOXES
 /***********************
 DESIGN SYSTEM - Cards
 ***********************/
-.project-card {
+.card-project {
     width: 100%;
     padding: 0;
     position: relative;
@@ -115,7 +115,16 @@ DESIGN SYSTEM - Cards
         cursor: pointer;
     }
     
-    .card-content-overlay {
+    &-bg {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1.5/1;
+        background-position: center center;
+        background-repeat:  no-repeat;
+        background-size: cover;
+    }
+    
+    &-content-overlay {
         position: absolute;
         top:0; right:0; bottom: 0; left: 0;
         
@@ -123,7 +132,7 @@ DESIGN SYSTEM - Cards
         height: 100%;
         box-sizing: border-box;
     }
-    .project-title {
+    &-title {
         margin-top: 1rem;
         @include font-family-reading;
         @include font-style(600, 1.5rem, 1.3em, $secondary-color-darker);
@@ -169,19 +178,6 @@ DESIGN SYSTEM - Cards
         }
     }
     
-}
-
-
-.project-card,
-.hp-services-card {
-    .card-bg {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1;
-        background-position: center center;
-        background-repeat:  no-repeat;
-        background-size: cover;
-    }
 }
 
 
