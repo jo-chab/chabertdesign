@@ -30,31 +30,26 @@ HOME PAGE
 
 
 /*** portfolio ***/
-.project-box-container {
-    display: grid;
-    gap: 2rem;
-    width: 100%;
-    @include mobile {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .project-box-left,
-    .project-box-right {
-        display: flex;
-        gap: 2rem;
-    }
-    
-    .project-box-left {
-        flex-direction: column;
-    }
-    
-    .project-box-right {
-        flex-direction: column-reverse;
-    }
+.w-project-box {
     
     .project-box {
+        position: relative;
         width: 100%;
-        background: #E2e2e2;
+        height: 40dvh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include tablet {
+            height: 100dvh;
+            min-height: 600px;
+        }
+    }
+    .project-link-overlay {
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 2;
+        width:100%;
+        height: 100%;
     }
 }
 
@@ -201,6 +196,7 @@ PAGE SERVICES
         li {
             @extend p;
             list-style: none;
+            
             &:has(+ li) {
                 margin-bottom: .25rem;
             }
