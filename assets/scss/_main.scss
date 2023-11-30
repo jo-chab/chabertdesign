@@ -38,6 +38,7 @@ HOME PAGE
         height: 40dvh;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center center;
         @include tablet {
             height: 100dvh;
             min-height: 600px;

@@ -1,5 +1,15 @@
 
 
+
+
+<!-- Container for the chart -->
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<!-- Container for textual information -->
+<div id="visitorInfo"></div>
+
+
+
 <ul class="list-dashboard-menu grid-system">
     
     <li><a class="icon icon-atop i-client" href="?content=10"><span>Clients</span></a></li>
@@ -8,3 +18,4 @@
     <li><a class="icon icon-atop i-image" href="?content=2"><span>Images</span></a></li>
 
 </ul>
+
