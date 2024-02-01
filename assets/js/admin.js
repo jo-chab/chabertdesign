@@ -6,6 +6,27 @@
         });
     });
 
+    //Fonction qui ajoute l'icone quand il y a un sous-menu
+    $('.admin-nav').each(function() {
+        if ($(this).children('.sub-nav').length > 0) {
+            $(this).children('.menu-element').addClass('has-sub');
+        }
+    });
+
+
+    //Fonction qui ajoute la classe SELECTED quand on clique et qui active ou desactive le sous-menu
+    $('.menu-element').click(function(event) {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            $(this).siblings('.sub-nav').slideUp(400);
+        } else {
+            $('.menu-element').removeClass('selected');
+            $(this).addClass('selected');
+            $('.sub-nav').not($(this).siblings('.sub-nav')).slideUp(400);
+            $(this).siblings('.sub-nav').slideDown(400).css('display', 'flex');
+        }
+    });
+
 
     function toggleContentAdd() {
         const addButton = document.querySelector('.js-content-add');
