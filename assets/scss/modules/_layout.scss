@@ -29,6 +29,20 @@ img {
     position: relative;
 }
 
+
+
+
+/********* FONCTIONS *********/
+.is-hide {
+    display:none;
+}
+
+@include tablet {
+    .only-mobile {
+        display: none;
+    }
+}
+
 /*******************************************************
 GRID SYSTEM
 *******************************************************/
@@ -242,19 +256,5 @@ article {
     
     h6 {
         margin-bottom: 8px;
-    }
-}
-
-
-
-
-/********* FONCTIONS *********/
-.is-hide {
-    display:none;
-}
-
-@include tablet {
-    .only-mobile {
-        display: none;
     }
 }

@@ -8,11 +8,14 @@
 */
 
 
-@import "font-family";
+
+
 
 /*******************************************************
 FAMILY - Font Families
 *******************************************************/
+@import "../basics/font-family";
+
 @mixin font-family-heading() {
 	font-family: 'Gabriela', serif;
 }

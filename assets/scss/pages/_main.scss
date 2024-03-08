@@ -39,9 +39,14 @@ HOME PAGE
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        transition: all .3s ease;
         @include tablet {
             height: 100dvh;
             min-height: 600px;
+            
+            &:hover {
+                filter: grayscale(1);
+            }
         }
     }
     .project-link-overlay {
@@ -49,8 +54,25 @@ HOME PAGE
         top:0;
         left:0;
         z-index: 2;
+        
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
         width:100%;
         height: 100%;
+    }
+    .project-sticker {
+        padding: 1rem 2rem;
+        background: white;
+        
+        @include font-family-reading();
+        @include font-style(700, 1rem, 1em, $secondary-color-darker);
+        
+        transition: all .3s ease;
+        &:hover {
+            transform: scale(1.25);
+            transform-origin: bottom right;
+        }
     }
 }
 
@@ -86,14 +108,15 @@ HOME PAGE
 /*** Button Group ***/
 .w-buttons-group {
     display: flex;
-    flex-flow: row nowrap;
-    gap: 40px;
+    flex-flow: column nowrap;
+    gap: 2rem;
     justify-content: center;
-    margin-top: 4rem;
+    padding: 3rem 0;
     
-    @include mobile-max {
-        flex-direction: column;
-        margin-top: 2rem;
+    @include tablet {
+        flex-flow: row nowrap;
+        gap: 5rem;
+        padding: 5rem 0;
     }
 }
 
